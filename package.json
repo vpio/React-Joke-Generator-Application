@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.3"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "heroku-postbuild": "cd ./JokesFF1 && yarn install && yarn run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "name": "wynJokeFinal",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT"
+}
