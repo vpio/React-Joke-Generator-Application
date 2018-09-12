@@ -16,19 +16,23 @@ const styles = theme => ({
 
 
 class SingleJoke extends React.Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       joke: [],
       activateLasers: 0,
       laserStatus: 'inactive',
       buttonText: 'Get New Joke',
       arrows: 'off',
-      punchLine: 'punchLineOff',
+      punchLine: 'punchLineOff'
 
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.showPunch = this.showPunch.bind(this)
+  }
+
+  componentWillReceiveProps(){
+    this.setState({punchLine: this.props.display})
   }
 
 showPunch(e){
@@ -84,6 +88,8 @@ async getJokeServer(){
 
 
 
+
+
 moneyBagsFilter(){
   console.log(this.state.joke)
   console.log('moneyBagsFilter called')
@@ -94,7 +100,9 @@ moneyBagsFilter(){
        <div className = "jokesMap">
          <li key = {j.id}>{j.setup}</li>
          <div className = "punchLineDiv">
-           <li id='yay' className ={ this.state.punchLine} >{j.punchline}</li>
+           {console.log('this is the display')}
+           {console.log(this.state.punchLine)}
+           <li id='yay' className ={this.state.punchLine} >{j.punchline}</li>
          </div>
        </div>
        return something
@@ -105,9 +113,14 @@ moneyBagsFilter(){
 
 chooseOneJoke(){
 
+
   let array = this.moneyBagsFilter()
-  // console.log(array.length)
-  // let randNumb = Math.floor(Math.random() * array.length)
+  // if (array.length === 0) {
+  //
+  // }
+
+  console.log('This is the array that we will get a joke from')
+  console.log(array)
   let oneJoke = array[0]
   // console.log(oneJoke)
   return oneJoke
@@ -130,16 +143,19 @@ chooseOneJoke(){
 
 //This div encompasses the entire page itself.
       <div className = "entireJokePage">
+        {console.log('yo tommy')}
+        {console.log(this.state.punchLine)}
         {console.log('rendered singlejoke component to page')}
 {/*This div encompasses the Joke display section as well as the hidden message. */}
           <div className = "jokeView" id= {this.state.laserStatus} >
             <div>
-              <h1 className = {this.state.laserStatus}>GET REKT BRO</h1>
+              <h1 className = {this.state.laserStatus}><img src="https://vignette.wikia.nocookie.net/roblox/images/3/31/Dancing_Banana.gif/revision/latest?cb=20180323041445" height="80px" width= "80px"></img>  PARTY TIME!  <img src="https://vignette.wikia.nocookie.net/roblox/images/3/31/Dancing_Banana.gif/revision/latest?cb=20180323041445" height="80px" width= "80px"></img></h1>
             </div>
             <div className = "jokeDisplay">
               <ul className="jokes">{this.chooseOneJoke()}</ul>
             </div>
           </div>
+
 
 
 

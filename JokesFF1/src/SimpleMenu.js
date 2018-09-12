@@ -9,11 +9,14 @@ class SimpleMenu extends React.Component {
   state = {
     anchorEl: null,
     value: '',
-    pickerText: 'Choose a Category'
+    pickerText: 'Choose a Category',
+    display: 'hello'
   };
 
+  
+
   handleClick = event => {
-    this.setState({ anchorEl: event.currentTarget});
+    this.setState({ anchorEl: event.currentTarget, display: 'punchLineOff'});
   };
 
   handleClose = (event) => {
@@ -34,7 +37,7 @@ class SimpleMenu extends React.Component {
       type = 'general'
     }
     let newHeader = type.charAt(0).toUpperCase() + type.substr(1)
-    this.setState({ anchorEl: null, value: type, pickerText: newHeader })
+    this.setState({ anchorEl: null, value: type, pickerText: newHeader, display: 'punchLineOff' })
 
   };
 
@@ -62,7 +65,7 @@ class SimpleMenu extends React.Component {
             <MenuItem value='3' onClick={this.handleClose}>Programming</MenuItem>
           </Menu>
         </div>
-        <SingleJoke money = {this.state.value} cash = {this.state.time}/>
+        <SingleJoke display={this.state.display} money = {this.state.value} cash = {this.state.time}/>
       </div>
     );
   }

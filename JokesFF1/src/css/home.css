@@ -21,6 +21,7 @@ a {
 
 .wynJokeContainer h1{
   font-family: helvetica;
+  /* margfin: 0 50px; */
 }
 
 .wynJokeContainer {
@@ -38,33 +39,45 @@ a {
 .wynJoke {
   background: tomato;
   padding: 5px;
-  width: 600px;
+  width: 100%;
   height: 150px;
   margin: 10px;
   line-height: 150px;
   color: white;
   font-weight: bold;
-  font-size: 7vw;
+  font-size: 6vw;
   text-align: center;
   order: 1;
-  background: rgba(237, 109, 82, 1);
+  border-radius: 10px;
 
 }
 
+
 #browserDiv{
 text-align: center;
-order: 3;
 height: 50px;
 font-family: helvetica;
 }
 
+#browserDivBig{
+
+justify-content: center;
+}
+
+
 #jokeLink{
   color: white;
-  padding: 20px;
+  padding: 12px;
 }
 
 @media screen and (min-width: 795px) {
   .wynJoke {
     font-size: 3em;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .wynJoke {
+    width: 600px;
   }
 }

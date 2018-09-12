@@ -10,7 +10,7 @@ import DardoApp from './dardo-components/dardoapp';
 class NavBar extends React.Component{
   render() {
     return (
-      <div>
+      <div id="browserDivBig">
 
       <BrowserRouter>
         <div id="browserDiv">
