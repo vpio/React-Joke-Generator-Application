@@ -51,7 +51,9 @@ a {
   border-radius: 10px;
 
 }
-
+.smileyFront {
+  margin: 50px;
+}
 
 #browserDiv{
 text-align: center;
